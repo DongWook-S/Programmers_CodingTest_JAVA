@@ -1,9 +1,5 @@
 package Lv1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class CodingTest12 {
     public long solution(long n) {
         long answer = 0;
@@ -14,7 +10,17 @@ public class CodingTest12 {
             arr[i] = Character.getNumericValue(str.charAt(i));
         }
 
-        Arrays.sort(arr, Collections.reverseOrder());
+        // Arrays.sort(arr, Collections.reverseOrder());
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
 
         String value = "";
 
