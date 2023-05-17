@@ -16,6 +16,14 @@ public class CodingTest12 {
 
         Arrays.sort(arr, Collections.reverseOrder());
 
+        String value = "";
+
+        for (int i = 0; i < arr.length; i++) {
+            value += arr[i];
+        }
+
+        answer = Long.valueOf(value);
+
         return answer;
     }
     public static void main(String[] args) {
