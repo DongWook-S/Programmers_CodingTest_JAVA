@@ -2,9 +2,11 @@ package Lv1;
 
 public class CodingTest18 {
     public int solution(int[] absolutes, boolean[] signs) {
-        int answer = 123456789;
+        int answer = 0;
 
-        
+        for (int i = 0; i < signs.length; i++) {
+            answer += signs[i] == true ? absolutes[i] : absolutes[i] * -1;
+        }
 
         return answer;
     }
