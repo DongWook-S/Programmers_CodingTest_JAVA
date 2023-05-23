@@ -3,20 +3,24 @@ package Lv1;
 public class CodingTest34 {
     public String solution(String s, int n) {
         String answer = "";
-        int result = 0;
 
         for (int i = 0; i < s.length(); i++) {
+            int num = s.charAt(i);
 
-            int num = s.charAt(i) == ' ' ? 32 : Character.valueOf(s.charAt(i)) + n;
+            if (num == 32) {
+                answer += " ";
+                continue;
+            }
 
-//            switch (s.charAt(i)) {
-//                case ' ' : num = 32; break;
-//                case 'Z' : num = 63 + n; break;
-//                case 'z' : num = 96 + n; break;
-//                default : num = Character.valueOf(s.charAt(i)) + n; break;
-//            }
+            if (num <= 90) {
+                num += n;
+                if (num > 90) num -= 26;
+            } else {
+                num += n;
+                if (num > 122) num -= 26;
+            }
 
-            answer += (char) result;
+            answer += (char) num;
         }
 
         return answer;
